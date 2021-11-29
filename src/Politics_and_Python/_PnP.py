@@ -1,9 +1,8 @@
 """ Imports Go Here """
 import requests
+
 import logging
 
-# Logging setup
-logging.basicConfig(level=0)
 log = logging.getLogger(__name__)
 
 # Set Global Variables
@@ -233,4 +232,5 @@ if __name__ == '__main__':
     """
     If run directly then do main()
     """
+    logging.basicConfig(level=0)
     main()
