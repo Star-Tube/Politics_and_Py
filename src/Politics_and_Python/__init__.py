@@ -1,1 +1,1 @@
-from main import Key, Nations, Nation, City
+from .PnP import Key, City, Nation, Nations
