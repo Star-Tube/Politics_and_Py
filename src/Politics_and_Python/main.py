@@ -35,10 +35,10 @@ class Nation:
 
     def __init__(self, nid=None, aa=None, name=None, leader=None, aaid=None, aapos=None, continent=None,
                  war_policy=None, color=None, cities=None, infra=None, off_war=None, def_war=None, score=None,
-                 rank=None, vm=None, minutes_inactive=None):
+                 rank=None, vm=None, minutes_inactive=None, call=False):
         self.update(nid=nid, aa=aa, name=name, leader=leader, aaid=aaid, aapos=aapos, continent=continent,
                     war_policy=war_policy, color=color, cities=cities, infra=infra, off_war=off_war, def_war=def_war,
-                    score=score, rank=rank, vm=vm, minutes_inactive=minutes_inactive)
+                    score=score, rank=rank, vm=vm, minutes_inactive=minutes_inactive, call=call)
 
     def update(self, nid=None, aa=None, name=None, leader=None, aaid=None, aapos=None, continent=None, war_policy=None,
                color=None, cities=None, infra=None, off_war=None, def_war=None, score=None, rank=None, vm=None,
