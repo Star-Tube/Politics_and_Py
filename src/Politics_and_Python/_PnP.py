@@ -7,12 +7,17 @@ logging.basicConfig(level=0)
 log = logging.getLogger(__name__)
 
 # Set Global Variables
-Key = ""
+_Key = ""
+
+
+def key(value):
+    global _Key
+    _Key = value
 
 
 # Set Class Nations()
 class Nations(list):
-    nations_url = f"http://politicsandwar.com/api/nations/?key={Key}"
+    nations_url = f"http://politicsandwar.com/api/nations/?key={_Key}"
 
     def __init__(self):
         super().__init__()
@@ -47,7 +52,7 @@ class Nation:
         if nid is not None:
             self.nid = nid
         if self.nid is int or str and call:
-            self.nation_api = f"http://politicsandwar.com/api/nation/id={self.nid}/&key={Key}"
+            self.nation_api = f"http://politicsandwar.com/api/nation/id={self.nid}/&key={_Key}"
             log.debug(f"Calling {self.nation_api}")
             api_response = requests.get(self.nation_api).json()
             log.debug("Call complete")
@@ -129,8 +134,8 @@ class City:
         if cityid is not None:
             self.cityid = cityid
         if self.cityid is not None and call:
-            log.debug(f"Calling https://politicsandwar.com/api/city/id={self.cityid}&key={Key}")
-            api_response = requests.get(f"https://politicsandwar.com/api/city/id={self.cityid}&key={Key}").json()
+            log.debug(f"Calling https://politicsandwar.com/api/city/id={self.cityid}&key={_Key}")
+            api_response = requests.get(f"https://politicsandwar.com/api/city/id={self.cityid}&key={_Key}").json()
             self.name = api_response["name"]
             self.nationid = api_response["nationid"]
             self.nation = api_response["nation"]
@@ -216,7 +221,7 @@ def main():
     Code Goes Here
     """
     print("This is a package. Import me into your program and use me to make your wettest dreams come true.")
-    global Key
+    global _Key
     mel = City(276893)
     mel.update(call=True)
     mel.build_update()
