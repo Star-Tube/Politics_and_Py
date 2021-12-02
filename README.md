@@ -17,7 +17,7 @@ You can then import the package with:
 > import Politics_and_Python
 
 I tend to prefer to import it as something shorter and I advise people use *as pnp* as the convention, like so:
-import Politics_and_Python as PnP
+> import Politics_and_Python as PnP
 
 You can also pull this repo down using github desktop or git then use it like a normal package or extract functions you want to use.
 
