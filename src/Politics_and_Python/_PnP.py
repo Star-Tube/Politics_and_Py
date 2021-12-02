@@ -1,6 +1,6 @@
 """ Imports Go Here """
 import requests
-
+import json
 import logging
 
 log = logging.getLogger(__name__)
@@ -103,6 +103,14 @@ class Nation:
             self.vm = vm
         if minutes_inactive is not None:
             self.minutes_inactive = minutes_inactive
+
+    def _update(self):
+        query = f"{{nations(id:{self.nid}, first:1) {{data {{id, alliance_id, nation_name,leader_name, continent, warpolicy, dompolicy, color, num_cities, score, population, flag, vmode, beigeturns, espionage_available, last_active, date, soldiers, tanks, aircraft, ships, missiles, nukes, spies, money, coal, oil, uranium, iron, bauxite, lead, gasoline, munitions, steel, aluminum, food, projects, ironw, bauxitew, armss, egr, massirr, itc, mlp, nrf, irond, vds, cia, cfce, propb, uap, city_planning, adv_city_planning, space_program, spy_satellite, moon_landing, pirate_economy, recycling_initiative, telecom_satellite, green_tech, arable_land_agency, clinical_research_center, specialized_police_training, adv_engineering_corps}}}}}}"
+        data = {"query": query}
+        json_data = json.dumps(data)
+        url = f"https://api.politicsandwar.com/graphql?api_key={_Key}"
+        print(url)
+        api_response = requests.get(url).json()
 
     def values(self):
         for x in self.__slots__:
@@ -220,12 +228,9 @@ def main():
     Code Goes Here
     """
     print("This is a package. Import me into your program and use me to make your wettest dreams come true.")
-    global _Key
-    mel = City(276893)
-    mel.update(call=True)
-    mel.build_update()
-    for value in mel.values():
-        print(value)
+    key("")
+    mel = Nation(152003)
+    mel._update()
 
 
 if __name__ == '__main__':
