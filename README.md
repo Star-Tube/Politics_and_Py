@@ -10,7 +10,15 @@ This repository is intended to allow newer or less experienced python programmer
 Feel free to send pull requests. I will ensure I get back to you so long as this repo hasn't gone cold.
 
 ## How to use
-You can pull this repo down using github desktop or git then use it like a normal package or extract functions you want to use. Eventually I plan on adding pip support but sadly that is not available right now.
+You can install this package using pip like so:
+pip install Politics-and-Py
+You can then import the package with:
+import Politics_and_Python
+
+I tend to prefer to import it as something shorter and I advise people use *as pnp* as the convention, like so:
+import Politics_and_Python as PnP
+
+You can also pull this repo down using github desktop or git then use it like a normal package or extract functions you want to use.
 
 ## Contact
 I am available through Github occasionally but if you want a possibly faster dialogue go for discord.
