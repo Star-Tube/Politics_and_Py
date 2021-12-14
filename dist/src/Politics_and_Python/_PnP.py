@@ -5,6 +5,8 @@ import logging
 
 log = logging.getLogger(__name__)
 
+# Checking if the push system is functioning
+
 # Set Global Variables
 _Key = ""
 
