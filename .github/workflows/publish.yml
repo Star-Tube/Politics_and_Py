@@ -2,10 +2,8 @@ name: Publish Python 🐍 distributions 📦 to PyPI and TestPyPI
 
 on:
   pull_request:
-    branches:
-      - main
-    types:
-      - closed
+    branches: [ main ]
+    types: [ closed ]
 jobs:
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
